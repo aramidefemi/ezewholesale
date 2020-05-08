@@ -1,3 +1,27 @@
 @charset "UTF-8";
 
 @import 'vendor/normalize';
+@import 'vendor/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+h1 {
+  color: white;
+  /* font-weight: 800; */
+  word-spacing: 12px;
+  font-size: 40px;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
+}
+
+.body {
+  background-color: #14161c;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+.header {
+  padding: 20px;
+  padding-left: 50px;
+}
+

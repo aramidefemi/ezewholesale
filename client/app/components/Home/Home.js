@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'; 
 import 'whatwg-fetch';
 
 class Home extends Component {
@@ -6,101 +6,47 @@ class Home extends Component {
     super(props);
 
     this.state = {
-      counters: []
     };
 
-    this.newCounter = this.newCounter.bind(this);
-    this.incrementCounter = this.incrementCounter.bind(this);
-    this.decrementCounter = this.decrementCounter.bind(this);
-    this.deleteCounter = this.deleteCounter.bind(this);
-
-    this._modifyCounter = this._modifyCounter.bind(this);
   }
 
   componentDidMount() {
-    fetch('/api/counters')
-      .then(res => res.json())
-      .then(json => {
-        this.setState({
-          counters: json
-        });
-      });
+    // fetch('/api/counters')
+    //   .then(res => res.json())
+    //   .then(json => {
+    //     this.setState({
+    //       counters: json
+    //     });
+    //   });
   }
 
-  newCounter() {
-    fetch('/api/counters', { method: 'POST' })
-      .then(res => res.json())
-      .then(json => {
-        let data = this.state.counters;
-        data.push(json);
 
-        this.setState({
-          counters: data
-        });
-      });
-  }
-
-  incrementCounter(index) {
-    const id = this.state.counters[index]._id;
-
-    fetch(`/api/counters/${id}/increment`, { method: 'PUT' })
-      .then(res => res.json())
-      .then(json => {
-        this._modifyCounter(index, json);
-      });
-  }
-
-  decrementCounter(index) {
-    const id = this.state.counters[index]._id;
-
-    fetch(`/api/counters/${id}/decrement`, { method: 'PUT' })
-      .then(res => res.json())
-      .then(json => {
-        this._modifyCounter(index, json);
-      });
-  }
-
-  deleteCounter(index) {
-    const id = this.state.counters[index]._id;
-
-    fetch(`/api/counters/${id}`, { method: 'DELETE' })
-      .then(_ => {
-        this._modifyCounter(index, null);
-      });
-  }
-
-  _modifyCounter(index, data) {
-    let prevData = this.state.counters;
-
-    if (data) {
-      prevData[index] = data;
-    } else {
-      prevData.splice(index, 1);
-    }
-
-    this.setState({
-      counters: prevData
-    });
-  }
 
   render() {
     return (
-      <>
-        <p>Counters:</p>
+      <div className='body'>
 
-        <ul>
-          { this.state.counters.map((counter, i) => (
-            <li key={i}>
-              <span>{counter.count} </span>
-              <button onClick={() => this.incrementCounter(i)}>+</button>
-              <button onClick={() => this.decrementCounter(i)}>-</button>
-              <button onClick={() => this.deleteCounter(i)}>x</button>
-            </li>
-          )) }
-        </ul>
+        <div className='header row'>
+          <div className='col-md-6 '>
+            <h1>Shop our latest <br /> available stock here</h1>
+            <div className='form row mt-4'>
+              <div className='col-md-9'>
+                <input className='form-control' placeholder='search' />
+              </div>
+              <div className='col-md-3 p-0'>
+                <button className='btn btn-primary' >SEARCH -></button>
+              </div>
+            </div>
+          </div>
+          <div className='col-md-6'>
+              <img  src={'../../../public/assets/img/iphone_11_pro_max.png'} />
+          </div>
+        </div>
 
-        <button onClick={this.newCounter}>New counter</button>
-      </>
+        <div className='container'>
+          <h1>Hello Man!</h1>
+        </div>
+      </div>
     );
   }
 }

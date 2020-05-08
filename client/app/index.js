@@ -13,8 +13,7 @@ import NotFound from './components/App/NotFound';
 
 import Home from './components/Home/Home';
  
-import './styles/styles.scss';
-import './styles/vendor/bootstraps/bootstrap.scss';
+import './styles/styles.scss'; 
 
 render((
   <Router>
