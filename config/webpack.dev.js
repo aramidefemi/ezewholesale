@@ -13,7 +13,7 @@ module.exports = merge(commonConfig, {
       'webpack-hot-middleware/client?reload=true'
     ]
   },
-
+ 
   output: {
     filename: 'js/[name].js',
     chunkFilename: '[id].chunk.js'

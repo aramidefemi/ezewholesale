@@ -1,4 +1,5 @@
 const Counter = require('../../models/Counter');
+const Sheets = require('../../lib/google-sheets');
 
 module.exports = (app) => {
   app.get('/api/counters', (req, res, next) => {
@@ -24,6 +25,10 @@ module.exports = (app) => {
   });
 
   app.put('/api/counters/:id/increment', (req, res, next) => {
+    // Authenticate with the Google Spreadsheets API.
+
+    Sheets.test();
+
     Counter.findById(req.params.id)
       .exec()
       .then((counter) => {
