@@ -1,6 +1,7 @@
-import React, { Component } from 'react'; 
-import FilterComponent from './widgets/filter';
+import React, { Component } from 'react';
 import img from '../../../public/assets/img/iphone_11_pro_max.png';
+import FilterComponent from './widgets/filter';
+import CardComponent from './widgets/card';
 import 'whatwg-fetch';
 
 class Home extends Component {
@@ -50,7 +51,13 @@ class Home extends Component {
             <div className='col-md-3'>
               <FilterComponent />
             </div>
-            <div className='col-md-9'></div>
+            <div className='col-md-9'>
+              <div className='row'>
+                <div className='col-md-4'>
+                  <CardComponent />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
