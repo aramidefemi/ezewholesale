@@ -14,7 +14,12 @@ function CardComponent({ data, action }) {
         <img src={img} />
       </div>
       <div className='description'>
-        <
+        <h4>iPhone 8 Plus</h4>
+        <p>UNLOCKED | 265GB</p>
+        <p><small>unit price</small></p>
+        <h3>$450</h3>
+        <p>1500 available</p>
+
       </div>
     </div>
   );
