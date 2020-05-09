@@ -30,20 +30,20 @@ class Home extends Component {
       <div className='body'>
 
         <div className='header row'>
-          <div className='col-md-6 '>
+          <div className='col-md-6'>
             <h1>Shop our latest <br /> available stock here</h1>
             <div className='form row mt-4'>
-              <div className='col-md-9'>
-                <input className='form-control' placeholder='search' />
+              <div className='col-md-10'>
+                <input className='form-control' placeholder='Enter Search Term (e.g iphoNe XS, A1, 128GB) ' />
               </div>
-              <div className='col-md-3 p-0'>
-                <button className='btn btn-primary' >SEARCH</button>
+              <div className='col-md-2 p-0'>
+                <button className='btn btn-primary btn-block' >SEARCH</button>
               </div>
             </div>
           </div>
-          {/* <div className='col-md-6'>
-              <img  src={img} />
-          </div> */}
+          <div className='col-md-6'>
+              <img  className='text-center' src={img} />
+          </div>
         </div>
 
         <div className=' mt-5'>

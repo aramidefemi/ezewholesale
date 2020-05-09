@@ -8,8 +8,8 @@
 h1 {
   color: white;
   /* font-weight: 800; */
-  word-spacing: 12px;
-  font-size: 40px;
+  word-spacing: 10px;
+  font-size: 45px;
   text-transform: uppercase;
   font-family: 'Roboto', sans-serif;
   line-height: 1.4;
@@ -23,8 +23,12 @@ h1 {
 }
 
 .header {
-  padding: 20px;
+  padding: 30px;
   padding-left: 50px;
+  img {
+    margin: auto;
+    display: block;
+  }
 }
 
 .filter {
