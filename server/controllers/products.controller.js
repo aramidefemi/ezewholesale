@@ -4,6 +4,7 @@ const SellRequest = require('../models/sellrequest.model');
 
 
 exports.getBuyRequest = function (req, res, next) {
+
   var limit = req.params.limit || 10;
   var page = req.params.page ||  1;
   var skip = req.params.limit * page;
@@ -17,6 +18,7 @@ exports.getBuyRequest = function (req, res, next) {
     .catch((err) => console.error(err));
 }
 exports.getSellRequest = function (req, res, next) {
+  console.log('req',req);
   var limit = req.params.limit;
   var page = req.params.page;
   var skip = req.params.limit * page;
