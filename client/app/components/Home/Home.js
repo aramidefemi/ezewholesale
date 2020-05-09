@@ -1,4 +1,6 @@
 import React, { Component } from 'react'; 
+import FilterComponent from './widgets/filter';
+import img from '../../../public/assets/img/iphone_11_pro_max.png';
 import 'whatwg-fetch';
 
 class Home extends Component {
@@ -34,17 +36,22 @@ class Home extends Component {
                 <input className='form-control' placeholder='search' />
               </div>
               <div className='col-md-3 p-0'>
-                <button className='btn btn-primary' >SEARCH -></button>
+                <button className='btn btn-primary' >SEARCH</button>
               </div>
             </div>
           </div>
-          <div className='col-md-6'>
-              <img  src={'../../../public/assets/img/iphone_11_pro_max.png'} />
-          </div>
+          {/* <div className='col-md-6'>
+              <img  src={img} />
+          </div> */}
         </div>
 
-        <div className='container'>
-          <h1>Hello Man!</h1>
+        <div className=' mt-5'>
+          <div className='row'>
+            <div className='col-md-3'>
+              <FilterComponent />
+            </div>
+            <div className='col-md-9'></div>
+          </div>
         </div>
       </div>
     );

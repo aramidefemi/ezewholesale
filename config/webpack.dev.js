@@ -13,15 +13,27 @@ module.exports = merge(commonConfig, {
       'webpack-hot-middleware/client?reload=true'
     ]
   },
- 
+
   output: {
     filename: 'js/[name].js',
     chunkFilename: '[id].chunk.js'
   },
-
   devServer: {
+    inline: false,
     contentBase: './client/public',
     historyApiFallback: true,
     stats: 'minimal' // none (or false), errors-only, minimal, normal (or true) and verbose
-  }
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
+    ],
+  },
 });

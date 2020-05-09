@@ -3,6 +3,7 @@
 @import 'vendor/normalize';
 @import 'vendor/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 h1 {
   color: white;
@@ -17,11 +18,71 @@ h1 {
 .body {
   background-color: #14161c;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   font-family: 'Roboto', sans-serif;
 }
+
 .header {
   padding: 20px;
   padding-left: 50px;
 }
 
+.filter {
+
+  background-color: #1e242f;
+  color: white;
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+
+  h3 {
+    color: white;
+    font-size: 15px;
+  }
+
+  p {
+    cursor: pointer;
+    color: white;
+    font-size: 11px;
+    padding-left: 20px;
+    margin-bottom: 7px;
+  }
+
+  .categories {}
+
+  .pricefilter {
+    .MuiSlider-root {
+      color: #f8f9fa;
+    }
+
+    .PrivateValueLabel-offset-23 {
+      color: #14161c;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    .line {
+      margin: 0 5px 0 5px;
+      color: grey;
+      font-weight: 900;
+      font-size: 15px;
+      padding: 0;
+    }
+
+    // .container {}
+  }
+
+  .storage {
+
+    h4 {
+      font-size: 13px;
+      display: inline;
+      margin-left: 10px;
+    }
+
+    .form-control {
+      display: inline;
+    }
+  }
+}
