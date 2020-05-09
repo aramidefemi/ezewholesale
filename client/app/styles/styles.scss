@@ -100,7 +100,20 @@ h1 {
   }
 
   .description {
-
+    h4 {
+      font-size: 18px;
+    }
+    p{
+      cursor: pointer;
+      color: #929eaa;
+      font-size: 13px; 
+      margin-bottom: 5px;
+    }
+    h3{
+      letter-spacing: 1.5px;
+      font-size: 25px;
+      margin-bottom: 0px;
+    }
   }
   .condition {
     width: 100%;
