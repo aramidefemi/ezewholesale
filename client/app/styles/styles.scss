@@ -95,7 +95,8 @@ h1 {
   color: white;
   padding: 20px;
   font-family: 'Roboto', sans-serif;
-
+  margin-bottom: 30px;
+  
   .img {
     height: auto; 
     img {
@@ -132,5 +133,15 @@ h1 {
       border-radius: 2px;
       border: 1px solid grey;
     }
+  }
+}
+.floatCenter {
+  margin: auto;
+  display: block;
+}
+
+.makeStyles-root-38 {
+  button {
+    color: white;
   }
 }

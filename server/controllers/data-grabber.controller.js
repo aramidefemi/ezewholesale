@@ -22,7 +22,7 @@ const getSheetData = async function (req, res, next) {
                 done => {
                   let cell = sheet.getCell(device.position.start + storages.indexOf(storage), grades.indexOf(grade) + 2);
                   const buyRequest = new BuyRequest({
-                    name: device.name,
+                    name: device.name.toUpperCase(),
                     price: cell.value,
                     condition: grade,
                     storageCapacity: storage,
@@ -36,7 +36,7 @@ const getSheetData = async function (req, res, next) {
                 done => {
                   let cell = sheet.getCell(device.position.start + storages.indexOf(storage), grades.indexOf(grade) + 13);
                   const sellRequest = new SellRequest({
-                    name: device.name,
+                    name: device.name.toUpperCase(),
                     price: cell.value,
                     condition: grade,
                     storageCapacity: storage,

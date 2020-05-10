@@ -9,14 +9,17 @@ var categoryList = [
   'AirPods'
 ];
 
-function DeviceFilterComponent({action }) { 
-  // const [count, setCount] = useState(0);
+function DeviceFilterComponent({ action }) {
 
   return (
     <div className='categories'>
       <h3>Categories</h3>
       {
-        categoryList.map((item,index)=><p key={index}>{item}</p>)
+        categoryList.map((item, index) => <p onClick={() =>
+          action({
+            name: [item.toUpperCase]
+          })
+        } key={index}>{item}</p>)
       }
     </div>
   );

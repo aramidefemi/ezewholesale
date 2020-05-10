@@ -9,8 +9,7 @@ exports.grades = [
   'C/B',
   'C/D'
 ]
-exports.iphones = [
-  {
+exports.iphones = [{
     name: 'iPhone XS MAX',
     position: {
       start: 4, // row number to start picking from

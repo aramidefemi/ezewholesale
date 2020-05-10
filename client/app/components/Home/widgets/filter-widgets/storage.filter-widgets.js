@@ -7,24 +7,27 @@ var categoryList = [
   '256GB',
 ];
 
-function StorageFilterComponent({action }) { 
-  // const [count, setCount] = useState(0);
+function StorageFilterComponent({ action }) { 
 
   return (
     <div className='storage mt-4'>
       <h3>Storage</h3>
       <div className='container'>
-      {
-        categoryList.map((item,index)=>{
-          return (
-            <>
-            <input  type="radio" />
-            <h4 key={index}>{item}</h4>
-            <br />
-            </>
-          )
-        })
-      }
+        {
+          categoryList.map((item, index) => {
+            return (
+              <div key={index}>
+                <input
+                  onChange={() => action({
+                    size: [item]
+                  })}
+                  type="radio" name="storage" />
+                <h4 key={index}>{item}</h4>
+                <br />
+              </div>
+            )
+          })
+        }
       </div>
     </div>
   );

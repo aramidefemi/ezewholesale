@@ -4,6 +4,7 @@ const historyApiFallback = require('connect-history-api-fallback');
 const mongoose = require('mongoose');
 const path = require('path');
 const webpack = require('webpack');
+var bodyParser = require('body-parser')
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 
@@ -11,7 +12,7 @@ const config = require('../config/config');
 const webpackConfig = require('../webpack.config');
 
 const isDev = process.env.NODE_ENV !== 'production';
-const port  = process.env.PORT || 8080;
+const port = process.env.PORT || 8080;
 
 
 // Configuration
@@ -22,9 +23,13 @@ mongoose.connect(isDev ? config.db_dev : config.db);
 mongoose.Promise = global.Promise;
 
 const app = express();
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({
+  extended: true
+}));
 app.use(express.json());
-
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 // API routes
 require('./routes')(app);
 

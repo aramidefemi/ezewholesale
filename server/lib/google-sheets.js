@@ -1,7 +1,9 @@
 const {
   GoogleSpreadsheet
 } = require('google-spreadsheet');
-const  { promisify } = require('util');
+const {
+  promisify
+} = require('util');
 
 var creds = require('../../config/google-apis-credentials.json');
 
@@ -13,8 +15,8 @@ var doc = new GoogleSpreadsheet('1F6BvjBRKMf6cVTzrb3O-4uORjnhHN0I6DC9jkuxQibo');
 
 async function accessSpreedSheet() {
   await doc.useServiceAccountAuth(creds);
-  await doc.loadInfo();  
-  const sheet = doc.sheetsByIndex[1]; 
+  await doc.loadInfo();
+  const sheet = doc.sheetsByIndex[1];
   return sheet;
 }
 

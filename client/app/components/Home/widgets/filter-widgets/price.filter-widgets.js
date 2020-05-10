@@ -11,7 +11,13 @@ function PriceFilterComponent({ action }) {
   const [value, setValue] = React.useState([28, 74]);
 
   const handleChange = (event, newValue) => {
-    setValue(newValue);
+    var data = {
+      price: {
+        min: newValue[0],
+        max: newValue[1]
+      }
+    }
+    action(data);
   };
   return (
     <div className='pricefilter mt-4'>
@@ -27,20 +33,28 @@ function PriceFilterComponent({ action }) {
         </div>
         <Slider
           value={value}
-          onChange={handleChange}
+          onChange={(e, value) => {
+            setValue(value);
+            handleChange(e, [value[0] * 10, value[1] * 10])
+          }}
           valueLabelDisplay="auto"
           aria-labelledby="range-slider"
           getAriaValueText={valuetext}
         />
         <div className='row mt-4'>
           <div className='col-md-12'>
-            <input className='form-control' placeholder='Max' />
+            <input className='form-control' onKeyUp={(e) => {
+              handleChange(e, [, e.target.value])
+            }} placeholder='Max' />
           </div>
           <div className='col-md-12'>
             <p className='line'>|</p>
           </div>
           <div className='col-md-12'>
-            <input className='form-control' placeholder='Min' />
+            <input className='form-control'
+              onKeyUp={(e) => {
+                handleChange(e, [e.target.value,])
+              }} placeholder='Min' />
           </div>
         </div>
       </div>
